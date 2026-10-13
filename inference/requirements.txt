@@ -1,0 +1,9 @@
+# Proposed Linux matrix; GPU execution has NOT been validated on this host.
+# Install torch/cu118 and compiled mmcv separately; see docs/MODEL_RUNTIME.md.
+numpy==1.26.4
+mmengine==0.10.7
+mmdet==3.3.0
+mmdet3d==1.4.0
+pydantic==2.11.4
+pydantic-settings==2.9.1
+nuscenes-devkit==1.1.11

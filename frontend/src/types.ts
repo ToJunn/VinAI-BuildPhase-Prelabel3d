@@ -1,0 +1,10 @@
+export type Scene = { token: string; name: string; description: string; nbr_samples: number };
+export type Frame = { sample_token: string; frame_index: number; timestamp_us: number };
+export type Box = { id: string; label: string; score: number; center: [number,number,number]; size_lwh: [number,number,number]; yaw_rad: number };
+export type Prediction = { boxes: Box[]; sample_token: string; model: { name: string; checkpoint_sha256: string } };
+export type Model = { id: string; name: string; available: boolean; errors: string[]; runtime_verified: boolean };
+export type Dataset = { root: string; version: string; available: boolean; error: string | null; scene_count: number };
+export type Job = { id: string; status: string; processed: number; total: number; elapsed: number; message: string; error: string | null; created_at: string; parent_job_id: string | null; request: { scene_token: string; sample_tokens: string[]; threshold: number } };
+export type Export = { id: string; status: string; processed: number; total: number; error: string | null; download_url?: string };
+export const labels = ['car','truck','trailer','bus','construction_vehicle','bicycle','motorcycle','pedestrian','traffic_cone','barrier'];
+export const colors = ['#54d9b3','#80b6ff','#b396ff','#f5d26f','#ffa06b','#f579ac','#bded8b','#5cdded','#ffba69','#a5b2ca'];
